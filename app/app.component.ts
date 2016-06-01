@@ -3,6 +3,9 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-
 import {HeroesComponent} from './heroes.component';
 import {DashboardComponent} from './dashboard.component';
 import {HeroService} from './heroes.service';
+import {ModalWindowComponent} from './modal-window.component';
+import {Router} from '@angular/router-deprecated';
+import {KeypressThingyComponent} from './keypress-thingy.component';
 
 @RouteConfig([
     {
@@ -19,15 +22,18 @@ import {HeroService} from './heroes.service';
 ])
 @Component({
     selector: 'my-app',
-    template: `
-        <h1>{{title}}</h1>
-        <a [routerLink]="['Heroes']">Heroes</a>
-        <a [routerLink]="['Dashboard']">Dashboard</a>
-        <router-outlet></router-outlet>
-    `,
-    directives: [ROUTER_DIRECTIVES],
+    templateUrl: './app/app.component.html',
+    directives: [ROUTER_DIRECTIVES, ModalWindowComponent, KeypressThingyComponent],
     providers: [ROUTER_PROVIDERS, HeroService]
 })
 export class AppComponent {
-    title = "Tour of heroes"
+    title = "Tour of heroes";
+
+    constructor(private router: Router) {
+
+    }
+
+    navigateToPlace() {
+        debugger;
+    }
 }

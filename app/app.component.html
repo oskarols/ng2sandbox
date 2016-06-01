@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+
+<h5 (click)="navigateToPlace($event)">Testing thing</h5>
+
+<a [routerLink]="['Heroes']">Heroes</a>
+<a [routerLink]="['Dashboard']">Dashboard</a>
+
+<modal-window>
+    <modal-title>
+        <h3>This is a modal title</h3>
+    </modal-title>
+    <modal-body>
+        inside the modal body
+    </modal-body>
+</modal-window>
+
+<router-outlet></router-outlet>
+
+<router-outlet name="well"></router-outlet>
+
+<h6>There should be a keypress thing below this</h6>
+<keypress-thingy></keypress-thingy>
