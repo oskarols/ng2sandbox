@@ -6,6 +6,7 @@ import {HeroService} from './heroes.service';
 import {ModalWindowComponent} from './modal-window.component';
 import {Router} from '@angular/router-deprecated';
 import {KeypressThingyComponent} from './keypress-thingy.component';
+import {ClockIndicatorComponent} from './clock-indicator.component';
 
 @RouteConfig([
     {
@@ -23,7 +24,7 @@ import {KeypressThingyComponent} from './keypress-thingy.component';
 @Component({
     selector: 'my-app',
     templateUrl: './app/app.component.html',
-    directives: [ROUTER_DIRECTIVES, ModalWindowComponent, KeypressThingyComponent],
+    directives: [ROUTER_DIRECTIVES, ModalWindowComponent, KeypressThingyComponent, ClockIndicatorComponent],
     providers: [ROUTER_PROVIDERS, HeroService]
 })
 export class AppComponent {
