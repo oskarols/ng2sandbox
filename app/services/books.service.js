@@ -21,7 +21,7 @@ var BooksService = (function () {
             .map(function (res) {
             var body = res.json();
             console.log('Received response', body);
-            return body.data || {};
+            return body;
         });
     };
     BooksService = __decorate([

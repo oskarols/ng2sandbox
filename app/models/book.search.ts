@@ -8,7 +8,7 @@ export interface BookSearchResultItem {
 }
 
 export interface BookSearchResultListing {
-    items: BookSearchResultItem[],
-    kind: string,
-    totalItems: number
+    items: BookSearchResultItem[];
+    kind: string;
+    totalItems: number;
 }

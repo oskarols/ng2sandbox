@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var store_1 = require('@ngrx/store');
 var books_service_1 = require('./../services/books.service');
+var books_1 = require('./../reducers/books');
 var BooksToolbarComponent = (function () {
     function BooksToolbarComponent(store, booksService) {
         this.store = store;
@@ -18,10 +19,10 @@ var BooksToolbarComponent = (function () {
         this.searchTerm = undefined;
     }
     BooksToolbarComponent.prototype.loadBooks = function () {
+        var _this = this;
         var books = this.booksService.searchForBooks(this.searchTerm);
         books.subscribe(function (searchResult) {
-            console.log(searchResult);
-            //this.store.dispatch({type: ADD_BOOKS, payload: })
+            _this.store.dispatch({ type: books_1.ADD_BOOKS, payload: searchResult.items });
         });
         console.log(this.searchTerm);
     };

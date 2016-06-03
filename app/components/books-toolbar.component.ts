@@ -25,8 +25,7 @@ export class BooksToolbarComponent {
         var books = this.booksService.searchForBooks(this.searchTerm);
 
         books.subscribe((searchResult: BookSearchResultListing) => {
-            console.log(searchResult);
-            //this.store.dispatch({type: ADD_BOOKS, payload: })
+            this.store.dispatch({type: ADD_BOOKS, payload: searchResult.items });
         });
 
         console.log(this.searchTerm);

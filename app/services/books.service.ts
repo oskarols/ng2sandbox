@@ -15,7 +15,7 @@ export class BooksService {
                 .map((res) => {
                     let body = res.json();
                     console.log('Received response', body);
-                    return body.data || {};
+                    return body;
                 })
     }
 }
