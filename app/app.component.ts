@@ -7,6 +7,8 @@ import {ModalWindowComponent} from './modal-window.component';
 import {Router} from '@angular/router-deprecated';
 import {KeypressThingyComponent} from './keypress-thingy.component';
 import {ClockIndicatorComponent} from './clock-indicator.component';
+import {BooksService} from './services/books.service';
+import {HTTP_PROVIDERS} from '@angular/http';
 
 @RouteConfig([
     {
@@ -24,8 +26,8 @@ import {ClockIndicatorComponent} from './clock-indicator.component';
 @Component({
     selector: 'my-app',
     templateUrl: './app/app.component.html',
-    directives: [ROUTER_DIRECTIVES, ModalWindowComponent, KeypressThingyComponent, ClockIndicatorComponent],
-    providers: [ROUTER_PROVIDERS, HeroService]
+    directives: [ROUTER_DIRECTIVES, ModalWindowComponent],
+    providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, HeroService, BooksService]
 })
 export class AppComponent {
     title = "Tour of heroes";
