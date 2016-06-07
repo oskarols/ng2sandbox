@@ -1,3 +1,4 @@
 export interface StoreFormat {
-    books: any[]
+    books: any[],
+    favorites: any[]
 }

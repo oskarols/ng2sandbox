@@ -24,7 +24,6 @@ var BooksToolbarComponent = (function () {
         books.subscribe(function (searchResult) {
             _this.store.dispatch({ type: books_1.ADD_BOOKS, payload: searchResult.items });
         });
-        console.log(this.searchTerm);
     };
     BooksToolbarComponent = __decorate([
         core_1.Component({
