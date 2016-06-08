@@ -1,0 +1,3 @@
+<books-toolbar (search)="doBookSearch($event)"></books-toolbar>
+<favorites-list [favorites]="favorites"></favorites-list>
+<books-list [books]="books" (add)="addFavorite($event)" (remove)="removeFavorite($event)"></books-list>

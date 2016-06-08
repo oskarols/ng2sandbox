@@ -20,7 +20,6 @@ var BooksService = (function () {
         return this.http.get(searchBaseURL + searchTerm)
             .map(function (res) {
             var body = res.json();
-            console.log('Received response', body);
             return body;
         });
     };

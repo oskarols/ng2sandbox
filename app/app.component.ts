@@ -1,21 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
-import {HeroesComponent} from './heroes.component';
-import {DashboardComponent} from './dashboard.component';
-import {HeroService} from './heroes.service';
+import {DashboardComponent} from './components/dashboard.component';
 import {ModalWindowComponent} from './modal-window.component';
 import {Router} from '@angular/router-deprecated';
-import {KeypressThingyComponent} from './keypress-thingy.component';
-import {ClockIndicatorComponent} from './clock-indicator.component';
 import {BooksService} from './services/books.service';
 import {HTTP_PROVIDERS} from '@angular/http';
 
 @RouteConfig([
-    {
-        path: '/heroes',
-        name: 'Heroes',
-        component: HeroesComponent
-    },
     {
         path: '/dashboard',
         name: 'Dashboard',
@@ -27,10 +18,10 @@ import {HTTP_PROVIDERS} from '@angular/http';
     selector: 'my-app',
     templateUrl: './app/app.component.html',
     directives: [ROUTER_DIRECTIVES, ModalWindowComponent],
-    providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, HeroService, BooksService]
+    providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, BooksService]
 })
 export class AppComponent {
-    title = "Tour of heroes";
+    title = "Book Search & Listing";
 
     constructor(private router: Router) {
 

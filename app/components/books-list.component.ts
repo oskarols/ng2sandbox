@@ -1,9 +1,8 @@
-import {BooksService} from './../services/books.service';
-import { Component } from '@angular/core';
 import {BookSearchResultListing, BookSearchResultItem} from './../models/book.search';
-import {Store} from '@ngrx/store';
-import {StoreFormat} from './../store';
 import {FavoriteButtonComponent} from './favorite-button.component';
+import {Component, Output, Input, EventEmitter} from '@angular/core';
+import {Book} from './../models/book';
+import {Observable} from 'rxjs/Rx';
 
 @Component({
     selector: 'books-list',
@@ -11,16 +10,14 @@ import {FavoriteButtonComponent} from './favorite-button.component';
         <h5>Books</h5>
         <ul>
             <li *ngFor="let book of books | async">
-                {{book?.volumeInfo?.title}} <favorite-button [book]="book"></favorite-button>
+                {{book?.volumeInfo?.title}} <favorite-button (add)="add.emit(book)" (remove)="remove.emit(book)" [book]="book"></favorite-button>
             </li>
         </ul>
     `,
     directives: [FavoriteButtonComponent]
 })
 export class BooksListComponent {
-    books: any;
-
-    constructor(public store: Store<StoreFormat>, public booksService: BooksService) {
-        this.books = store.select('books');
-    }
+    @Input() books: Observable<Book>;
+    @Output() add = new EventEmitter();
+    @Output() remove = new EventEmitter();a
 }

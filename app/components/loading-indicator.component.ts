@@ -7,6 +7,5 @@ import {Component, Input} from '@angular/core';
     selector: 'loading-indicator'
 })
 export class LoadingIndicator {
-    @Input()
-    resource: any
+    @Input() resource: any
 }

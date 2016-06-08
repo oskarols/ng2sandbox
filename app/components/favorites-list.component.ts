@@ -1,9 +1,6 @@
-import {BooksService} from './../services/books.service';
-import { Component } from '@angular/core';
-import {BookSearchResultListing, BookSearchResultItem} from './../models/book.search';
-import {Store} from '@ngrx/store';
-import {StoreFormat} from './../store';
-import 'rxjs/Rx';
+import {Component,Input} from '@angular/core';
+import {Book} from './../models/book';
+import {Observable} from 'rxjs/Rx';
 
 @Component({
     selector: 'favorites-list',
@@ -17,11 +14,5 @@ import 'rxjs/Rx';
     `
 })
 export class FavoritesListComponent {
-    favorites: any;
-
-    constructor(public store: Store<StoreFormat>, public booksService: BooksService) {
-        this.favorites = store.select('books').map((book:any) => {
-            return book.filter((b) => b.isFavorited);
-        });
-    }
+    @Input() favorites: Observable<Book>;
 }
