@@ -1,7 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
-import 'rxjs/Rx';
-
 
 const searchBaseURL: string = 'https://www.googleapis.com/books/v1/volumes?q='
 

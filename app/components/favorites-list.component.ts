@@ -1,6 +1,6 @@
 import {Component,Input} from '@angular/core';
 import {Book} from './../models/book';
-import {Observable} from 'rxjs/Rx';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
     selector: 'favorites-list',

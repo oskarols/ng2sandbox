@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-require('rxjs/Rx');
 var searchBaseURL = 'https://www.googleapis.com/books/v1/volumes?q=';
 var BooksService = (function () {
     function BooksService(http) {

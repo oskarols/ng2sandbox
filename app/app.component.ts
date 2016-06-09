@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {DashboardComponent} from './components/dashboard.component';
-import {ModalWindowComponent} from './modal-window.component';
 import {Router} from '@angular/router-deprecated';
 import {BooksService} from './services/books.service';
 import {HTTP_PROVIDERS} from '@angular/http';
@@ -17,7 +16,7 @@ import {HTTP_PROVIDERS} from '@angular/http';
 @Component({
     selector: 'my-app',
     templateUrl: './app/app.component.html',
-    directives: [ROUTER_DIRECTIVES, ModalWindowComponent],
+    directives: [ROUTER_DIRECTIVES],
     providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, BooksService]
 })
 export class AppComponent {

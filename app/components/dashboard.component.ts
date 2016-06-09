@@ -7,7 +7,8 @@ import {FavoritesListComponent} from './favorites-list.component';
 import {Store} from '@ngrx/store';
 import {StoreFormat} from './../store';
 import {BooksService} from './../services/books.service';
-import {Observable} from 'rxjs/Rx';
+import {Observable} from 'rxjs/Observable';
+import './../utils/rxjs-operators';
 import {BookSearchResultListing} from './../models/book.search';
 
 import {ADD_BOOKS, ADD_FAVORITE, REMOVE_FAVORITE} from './../reducers/books';

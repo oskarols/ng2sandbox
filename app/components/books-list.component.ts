@@ -2,7 +2,7 @@ import {BookSearchResultListing, BookSearchResultItem} from './../models/book.se
 import {FavoriteButtonComponent} from './favorite-button.component';
 import {Component, Output, Input, EventEmitter} from '@angular/core';
 import {Book} from './../models/book';
-import {Observable} from 'rxjs/Rx';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
     selector: 'books-list',
