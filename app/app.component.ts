@@ -20,7 +20,7 @@ import {HTTP_PROVIDERS} from '@angular/http';
     providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, BooksService]
 })
 export class AppComponent {
-    title = "Book Search & Listing";
+    title = "Effect testing";
 
     constructor(private router: Router) {
 
