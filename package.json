@@ -7,7 +7,8 @@
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "typings": "typings"
+    "typings": "typings",
+    "test": "lite-server --open=testing.html"
   },
   "license": "ISC",
   "dependencies": {
@@ -21,7 +22,9 @@
     "@angular/router-deprecated": "2.0.0-rc.1",
     "@angular/upgrade": "2.0.0-rc.1",
     "@ngrx/core": "^1.0.0",
+    "@ngrx/effects": "^1.0.1",
     "@ngrx/store": "^2.0.0",
+    "@ngrx/store-devtools": "^2.0.0-beta.1",
     "angular2-in-memory-web-api": "0.0.10",
     "bootstrap": "^3.3.6",
     "core-js": "^2.4.0",
@@ -32,6 +35,7 @@
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
+    "jasmine-core": "2.4.1",
     "lite-server": "^2.2.0",
     "typescript": "^1.8.10",
     "typings": "^1.0.4"
