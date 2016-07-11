@@ -1,13 +1,21 @@
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 import { AppComponent } from './app.component';
-import { provideStore } from '@ngrx/store/ng2';
+import { provideStore, combineReducers } from '@ngrx/store';
 import { booksReducer } from './reducers/books';
 import {runEffects} from '@ngrx/effects';
-import {PollingEffect} from './effects/polling.effect';
+import {PollingEffects, schedulerToken} from './effects/polling.effects';
+import {compose} from "@ngrx/core/compose";
+import {storeLogger} from "ngrx-store-logger";
+import {AsyncScheduler} from 'rxjs/scheduler/AsyncScheduler';
+import {Scheduler} from 'rxjs/Scheduler';
 
 bootstrap(AppComponent, [
-    provideStore({
-        books: booksReducer
-    }),
-    runEffects(PollingEffect)
+    provideStore(
+      compose(
+        storeLogger(),
+        combineReducers
+      )({books: booksReducer})
+    ),
+    {provide: schedulerToken, useClass: AsyncScheduler},
+    runEffects(PollingEffects)
 ]);

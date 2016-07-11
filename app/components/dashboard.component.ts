@@ -12,6 +12,7 @@ import './../utils/rxjs-operators';
 import {BookSearchResultListing} from './../models/book.search';
 
 import {ADD_BOOKS, ADD_FAVORITE, REMOVE_FAVORITE} from './../reducers/books';
+import {POLL_BOOKS, POLL_BOOKS_STOP, POLL_BOOKS_START} from './../reducers/polling';
 
 @Component({
     selector: 'my-dashboard',
@@ -30,6 +31,7 @@ export class DashboardComponent implements OnInit {
     }
 
     ngOnInit() {
+      this.store.dispatch({type: POLL_BOOKS_START});
     }
 
     doBookSearch(searchTerm:string) {
